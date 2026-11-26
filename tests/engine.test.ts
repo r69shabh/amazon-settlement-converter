@@ -98,6 +98,14 @@ test('empty accounts and invalid Xero tax names are blocked',()=>{
   js[0].lines[0].xero='200';assert.throws(()=>exportJournals(js,'xero',''),/tax-rate name/);
   js[0].lines[0].qbo='';assert.throws(()=>exportJournals(js,'qbo'),/account name/);
 });
+test('large supported batches group efficiently without losing amounts',()=>{
+  const source=parseReport(sample());
+  const rows=Array.from({length:100000},(_,i)=>({...source.rows[0],id:i+2,cents:1}));
+  const settlement={...source.settlements[0],expected:100000,rows};
+  const journals=buildJournals({rows,settlements:[settlement],warnings:[]},options());
+  assert.equal(journals.length,1);assert.equal(journals[0].lines.find(l=>l.category==='sales')?.credit,100000);
+  assert.equal(journals[0].lines.find(l=>l.category==='clearing')?.debit,100000);
+});
 test('license verification rejects refunds, wrong products and ended or expired plans',()=>{
   const plan={...fallbackPlans[0],productId:'product-123'};
   const purchase={product_id:plan.productId,created_at:'2026-01-01T00:00:00Z'};

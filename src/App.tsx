@@ -77,12 +77,12 @@ export default function App() {
     return [...map];
   },[report,overrides]);
 
-  function reset() {setReport(null);setFilenames([]);setOverrides({});setError('');setNotice('');setDemo(false);setConfirmed(false);setView('converter');}
+  function reset() {setReport(null);setFilenames([]);setOverrides({});setError('');setNotice('');setDemo(false);setConfirmed(false);setView('converter');window.scrollTo(0,0);}
   function acceptReports(reports:Report[],names:string[],isDemo=false) {
     const settlements=reports.flatMap(r=>r.settlements);
     if(new Set(settlements.map(s=>s.id)).size!==settlements.length)throw new Error('Duplicate settlement IDs found. Upload each settlement once.');
     setReport({settlements,rows:reports.flatMap(r=>r.rows),warnings:[...new Set(reports.flatMap(r=>r.warnings))]});
-    setFilenames(names);setDemo(isDemo);setOverrides({});setConfirmed(false);setRates({});setError('');setNotice('');setView('converter');
+    setFilenames(names);setDemo(isDemo);setOverrides({});setConfirmed(false);setRates({});setError('');setNotice('');setView('converter');window.scrollTo(0,0);
     if(settlements.length===1)setBaseCurrency(settlements[0].currency);
   }
   function parse(text:string):Report {
@@ -127,7 +127,7 @@ export default function App() {
       localStorage.setItem('settlement-studio-profiles',JSON.stringify(data));setProfiles(data);setNotice('Mapping profiles imported. Select a profile to use it.');
     }catch(e){setError((e as Error).message);}
   }
-  const changeView=(next:View)=>{setView(next);setError('');setNotice('');};
+  const changeView=(next:View)=>{setView(next);setError('');setNotice('');window.scrollTo(0,0);};
 
   return <>
     <header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();changeView('converter');}} aria-label="Settlement Studio home"><span className="brand-icon"><Layers3 size={22}/></span><span>settlement<span className="brand-light">studio</span><span className="brand-dot">.</span></span></a><nav aria-label="Main navigation"><button className={view==='converter'?'active':''} onClick={()=>changeView('converter')}>Converter</button><button className={view==='guide'?'active':''} onClick={()=>changeView('guide')}>How it works</button><button className={view==='pricing'?'active':''} onClick={()=>changeView('pricing')}>Pricing</button></nav><button className="license-button" onClick={()=>setShowLicense(true)}><LockKeyhole size={14}/>{verified?'License active':'Activate license'}<ArrowUpRight size={14}/></button></header>

@@ -91,6 +91,7 @@ export function parseReport(input: string, format: Format = 'dot', dateOrder: 'M
   });
   const warnings = new Set<string>();
   const rows: Row[] = [];
+  const rowsBySettlement = new Map<string,Row[]>();
   for(const {r,id,index} of raw) {
     if(!r.amount?.trim()) {
       if(r['transaction-type']?.trim() || r['amount-type']?.trim() || r['amount-description']?.trim()) throw new Error(`Row ${index}: transaction is missing its amount.`);
@@ -102,7 +103,10 @@ export function parseReport(input: string, format: Format = 'dot', dateOrder: 'M
     try {
       const cents=parseMoney(r.amount,format);
       const transaction=r['transaction-type']||'',type=r['amount-type']||'',description=r['amount-description']||'';
-      rows.push({id:index,settlement:id,date:parseDate(date||'',dateOrder),currency:meta.currency,market:r['marketplace-name']||'',transaction,type,description,cents,category:classify(transaction,type,description),key:JSON.stringify([transaction,type,description])});
+      const row:Row={id:index,settlement:id,date:parseDate(date||'',dateOrder),currency:meta.currency,market:r['marketplace-name']||'',transaction,type,description,cents,category:classify(transaction,type,description),key:JSON.stringify([transaction,type,description])};
+      rows.push(row);
+      if(!rowsBySettlement.has(id)) rowsBySettlement.set(id,[]);
+      rowsBySettlement.get(id)!.push(row);
     } catch(error) {throw new Error(`Row ${index}: ${(error as Error).message}`);}
   }
   if(!rows.length) throw new Error('This report contains no transaction amounts.');
@@ -111,7 +115,7 @@ export function parseReport(input: string, format: Format = 'dot', dateOrder: 'M
     if(!currencies.includes(meta.currency)) throw new Error(`Settlement ${id}: missing or unsupported currency. Supported: ${currencies.join(', ')}.`);
     if(meta['total-amount']===undefined) throw new Error(`Settlement ${id}: missing total-amount deposit. Reconciliation requires the settlement summary row.`);
     const end=parseDate(meta['settlement-end-date']||'',dateOrder);
-    const settlementRows=rows.filter(r=>r.settlement===id);
+    const settlementRows=rowsBySettlement.get(id)||[];
     if(!settlementRows.length) throw new Error(`Settlement ${id} contains a summary but no transaction amounts.`);
     const start=meta['settlement-start-date']?parseDate(meta['settlement-start-date'],dateOrder):'';
     if(start && start>end) throw new Error(`Settlement ${id}: start date is after end date.`);
@@ -135,7 +139,8 @@ export function buildJournals(report: Report, options: Options): Journal[] {
     const buckets = new Map<string,Row[]>();
     for(const row of s.rows) {
       const key=options.split?row.date.slice(0,7):s.end.slice(0,7);
-      buckets.set(key,[...(buckets.get(key)||[]),row]);
+      if(!buckets.has(key))buckets.set(key,[]);
+      buckets.get(key)!.push(row);
     }
     for(const [month,rows] of [...buckets].sort(([a],[b])=>a.localeCompare(b))) {
       const totals=new Map<Category,number>();
