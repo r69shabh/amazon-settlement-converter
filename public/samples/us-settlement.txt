@@ -1,0 +1,18 @@
+settlement-id	settlement-start-date	settlement-end-date	deposit-date	total-amount	currency	transaction-type	order-id	merchant-order-id	adjustment-id	shipment-id	marketplace-name	amount-type	amount-description	amount	fulfillment-id	posted-date	posted-date-time	order-item-code	merchant-order-item-id	merchant-adjustment-item-id	sku	quantity-purchased	promotion-id
+DEMO-US-2602	2026-01-28 00:00:00 UTC	2026-02-04 23:59:59 UTC	2026-02-06	2422.00	USD																		
+DEMO-US-2602						Order	SAMPLE-0000				Amazon.com	ItemPrice	Principal	2000.00	AFN	2026-01-28	2026-01-28 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0001				Amazon.com	ItemPrice	Tax	160.00	AFN	2026-01-28	2026-01-28 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0002				Amazon.com	ItemWithheldTax	MarketplaceFacilitatorTax-Principal	-160.00	AFN	2026-01-28	2026-01-28 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0003				Amazon.com	ItemPrice	Shipping	25.00	AFN	2026-01-29	2026-01-29 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0004				Amazon.com	ItemFees	Commission	-300.00	AFN	2026-01-29	2026-01-29 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0005				Amazon.com	ItemFees	FBAPerUnitFulfillmentFee	-180.00	AFN	2026-01-30	2026-01-30 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0006				Amazon.com	Promotion	Principal	-40.00	AFN	2026-01-30	2026-01-30 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Refund	SAMPLE-0007				Amazon.com	ItemPrice	Principal	-100.00	AFN	2026-01-31	2026-01-31 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0008				Amazon.com	ItemPrice	Principal	1500.00	AFN	2026-02-01	2026-02-01 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0009				Amazon.com	ItemFees	Commission	-225.00	AFN	2026-02-01	2026-02-01 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Order	SAMPLE-0010				Amazon.com	ItemFees	FBAPerUnitFulfillmentFee	-135.00	AFN	2026-02-02	2026-02-02 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						ServiceFee	SAMPLE-0011				Amazon.com	other-transaction	StorageFee	-32.00	AFN	2026-02-02	2026-02-02 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						ServiceFee	SAMPLE-0012				Amazon.com	other-transaction	CostOfAdvertising	-75.00	AFN	2026-02-03	2026-02-03 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Adjustment	SAMPLE-0013				Amazon.com	other-transaction	FBAInventoryReimbursement	24.00	AFN	2026-02-03	2026-02-03 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Reserve	SAMPLE-0014				Amazon.com	other-transaction	Previous Reserve Amount Balance	80.00	AFN	2026-02-04	2026-02-04 12:00:00 UTC				SAMPLE-SKU	1	
+DEMO-US-2602						Reserve	SAMPLE-0015				Amazon.com	other-transaction	Current Reserve Amount	-120.00	AFN	2026-02-04	2026-02-04 12:00:00 UTC				SAMPLE-SKU	1	
