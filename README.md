@@ -1,5 +1,7 @@
 # Settlement Studio
 
+Browser-only Amazon settlement report to Xero and QuickBooks journal converter.
+
 Private, browser-only Amazon Flat File V2 settlement-to-journal converter. React + TypeScript + Vite, with no application backend, analytics, database or report-upload endpoint.
 
 ## Run
