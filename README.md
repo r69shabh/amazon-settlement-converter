@@ -2,6 +2,8 @@
 
 Browser-only Amazon settlement report to Xero and QuickBooks journal converter.
 
+Live app: https://amazon-settlement-converter.onrender.com
+
 Private, browser-only Amazon Flat File V2 settlement-to-journal converter. React + TypeScript + Vite, with no application backend, analytics, database or report-upload endpoint.
 
 ## Run
@@ -29,13 +31,13 @@ Use Node 24 and npm. `npm ci`, then `npm run dev`. `npm test` exercises the acco
 
 ## Enable Gumroad sales
 
-Create three products at https://gumroad.com/products:
+The production plans are listed below. For a separate deployment, create equivalent licensed products at https://gumroad.com/products:
 
 | Product | USD | License terms |
 | --- | --- | --- |
-| Settlement Studio — Seller | $49/year | One seller, all marketplaces |
-| Settlement Studio — Seller lifetime | $79 once | One seller, all marketplaces |
-| Settlement Studio — Bookkeeper | $149/year | Unlimited client businesses |
+| [Settlement Studio — Seller](https://rishabhgusain.gumroad.com/l/escgs) | $49/year | One seller, all marketplaces |
+| [Settlement Studio — Seller lifetime](https://rishabhgusain.gumroad.com/l/sytokg) | $79 once | One seller, all marketplaces |
+| [Settlement Studio — Bookkeeper](https://rishabhgusain.gumroad.com/l/ofyvps) | $149/year | Unlimited client businesses |
 
 Use annual memberships for recurring plans; enable license keys in each product's Content editor (Insert → License key). This block shows the **product ID** (not permalink). Add the app's live URL and import limitations to the product content. Configure each product's public purchase URL and product ID in `public/licensing.json`, then deploy. These values are public identifiers, never access tokens. Empty configuration disables checkout; the app must not pretend licenses are sold until this is ready.
 
