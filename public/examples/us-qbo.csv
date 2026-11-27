@@ -1,0 +1,18 @@
+﻿Journal No.,Journal Date,Account Name,Journal/Description,Debits,Credits
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Product sales,Product sales | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,,2000.00
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Tax collected,Tax collected | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,,160.00
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Marketplace tax withheld,Marketplace tax withheld | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,160.00,
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Shipping & gift wrap,Shipping & gift wrap | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,,25.00
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Referral & selling fees,Referral & selling fees | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,300.00,
+AMZ-DEMO-US-2602-2026-01,01/31/2026,FBA fulfillment fees,FBA fulfillment fees | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,180.00,
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Promotions,Promotions | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,40.00,
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Refunds,Refunds | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,100.00,
+AMZ-DEMO-US-2602-2026-01,01/31/2026,Amazon clearing,Amazon clearing | AMZ-DEMO-US-2602-2026-01 | USD to USD @ 1,1405.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Product sales,Product sales | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,,1500.00
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Referral & selling fees,Referral & selling fees | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,225.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,FBA fulfillment fees,FBA fulfillment fees | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,135.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Storage fees,Storage fees | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,32.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Advertising,Advertising | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,75.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Reimbursements,Reimbursements | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,,24.00
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Amazon reserves,Reserves | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,40.00,
+AMZ-DEMO-US-2602-2026-02,02/04/2026,Amazon clearing,Amazon clearing | AMZ-DEMO-US-2602-2026-02 | USD to USD @ 1,1017.00,
