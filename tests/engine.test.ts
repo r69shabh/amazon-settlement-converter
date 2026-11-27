@@ -8,6 +8,17 @@ import { fallbackPlans, validatePurchase } from '../src/license.ts';
 const sample=(region='us')=>readFileSync(new URL(`../public/samples/${region}-settlement.txt`,import.meta.url),'utf8');
 const options=(currency='USD'):Options=>({split:true,baseCurrency:currency,rates:{},overrides:{},mapping:defaultMapping(),taxName:'No Tax'});
 
+test('published synthetic example downloads reproduce the documented journals',()=>{
+  const report=parseReport(sample(),'dot');
+  const journals=buildJournals(report,options());
+  assert.deepEqual(journals.map(j=>({debits:j.lines.reduce((n,l)=>n+l.debit,0),credits:j.lines.reduce((n,l)=>n+l.credit,0)})),[
+    {debits:218500,credits:218500},{debits:152400,credits:152400}
+  ]);
+  assert.equal(journals.reduce((n,j)=>n+j.lines.find(l=>l.category==='clearing')!.debit,0),report.settlements[0].expected);
+  for(const target of ['xero','qbo'] as const)assert.equal(readFileSync(new URL(`../public/examples/us-${target}.csv`,import.meta.url),'utf8'),exportJournals(journals,target));
+  assert.equal(readFileSync(new URL('../public/examples/us-audit.csv',import.meta.url),'utf8'),exportAudit(report,{}));
+});
+
 for(const [region,currency,format] of [['us','USD','dot'],['uk','GBP','dot'],['eu','EUR','comma']] as const) {
   test(`${region.toUpperCase()} sample reconciles and splits at month end`,()=>{
     const r=parseReport(sample(region),format);

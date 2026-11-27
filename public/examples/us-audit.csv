@@ -1,0 +1,17 @@
+﻿Source row,Settlement,Date,Currency,Marketplace,Transaction,Amount type,Amount description,Category,Amount
+3,DEMO-US-2602,2026-01-28,USD,Amazon.com,Order,ItemPrice,Principal,Product sales,2000
+4,DEMO-US-2602,2026-01-28,USD,Amazon.com,Order,ItemPrice,Tax,Tax collected,160
+5,DEMO-US-2602,2026-01-28,USD,Amazon.com,Order,ItemWithheldTax,MarketplaceFacilitatorTax-Principal,Marketplace tax withheld,-160
+6,DEMO-US-2602,2026-01-29,USD,Amazon.com,Order,ItemPrice,Shipping,Shipping & gift wrap,25
+7,DEMO-US-2602,2026-01-29,USD,Amazon.com,Order,ItemFees,Commission,Referral & selling fees,-300
+8,DEMO-US-2602,2026-01-30,USD,Amazon.com,Order,ItemFees,FBAPerUnitFulfillmentFee,FBA fulfillment fees,-180
+9,DEMO-US-2602,2026-01-30,USD,Amazon.com,Order,Promotion,Principal,Promotions,-40
+10,DEMO-US-2602,2026-01-31,USD,Amazon.com,Refund,ItemPrice,Principal,Refunds,-100
+11,DEMO-US-2602,2026-02-01,USD,Amazon.com,Order,ItemPrice,Principal,Product sales,1500
+12,DEMO-US-2602,2026-02-01,USD,Amazon.com,Order,ItemFees,Commission,Referral & selling fees,-225
+13,DEMO-US-2602,2026-02-02,USD,Amazon.com,Order,ItemFees,FBAPerUnitFulfillmentFee,FBA fulfillment fees,-135
+14,DEMO-US-2602,2026-02-02,USD,Amazon.com,ServiceFee,other-transaction,StorageFee,Storage fees,-32
+15,DEMO-US-2602,2026-02-03,USD,Amazon.com,ServiceFee,other-transaction,CostOfAdvertising,Advertising,-75
+16,DEMO-US-2602,2026-02-03,USD,Amazon.com,Adjustment,other-transaction,FBAInventoryReimbursement,Reimbursements,24
+17,DEMO-US-2602,2026-02-04,USD,Amazon.com,Reserve,other-transaction,Previous Reserve Amount Balance,Reserves,80
+18,DEMO-US-2602,2026-02-04,USD,Amazon.com,Reserve,other-transaction,Current Reserve Amount,Reserves,-120

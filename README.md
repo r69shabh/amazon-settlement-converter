@@ -4,6 +4,10 @@ Browser-only Amazon settlement report to Xero and QuickBooks journal converter.
 
 Live app: https://amazon-settlement-converter.onrender.com
 
+Buyer information: [synthetic worked example](https://amazon-settlement-converter.onrender.com/#example), [named support, 30-day refunds and privacy](https://amazon-settlement-converter.onrender.com/#support). The published CSV examples are generated from the US synthetic fixture and regression-checked against the engine; they are not evidence of a real Xero/QBO import.
+
+Best fit: US sellers doing occasional manual close or historical cleanup. This is a manual draft CSV converter, not a full A2X/Link My Books replacement: no direct posting, inventory/COGS, deferred-order accruals, tax-return automation, team workspace or cross-session import deduplication. Non-US file support is conditional on accountant-reviewed VAT/GST/HST treatment; taxes are carried through, not calculated.
+
 Private, browser-only Amazon Flat File V2 settlement-to-journal converter. React + TypeScript + Vite, with no application backend, analytics, database or report-upload endpoint.
 
 ## Run
@@ -26,7 +30,7 @@ Use Node 24 and npm. `npm ci`, then `npm run dev`. `npm test` exercises the acco
 
 1. Push this repository to GitHub. At https://dashboard.render.com/select-repo?type=static choose **New Static Site** and connect it (or choose **New → Blueprint** to use `render.yaml`).
 2. Branch: `main`; build command: `npm ci && npm run build`; publish directory: `dist`. Static hosting is free; **do not create a paid web service**.
-3. Deploy and visit the assigned `https://…onrender.com` URL. `render.yaml` includes security headers; manual static-site creation should add the same headers from that file.
+3. Deploy and visit the assigned `https://…onrender.com` URL. `render.yaml` includes security headers; manual static-site creation should add the same headers from that file. The current public-repository Render connection requires **Manual Deploy → Deploy latest commit** after merging changes.
 4. Run the US/UK/EU samples, download the CSVs, then verify a real Gumroad test purchase before enabling checkout publicly.
 
 ## Enable Gumroad sales
